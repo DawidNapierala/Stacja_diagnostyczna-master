@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>Zarezerwowano usługę</p>
+    <p>
+        Data: <span th:text="${reservation.date}"></span>&nbsp;
+    <p>Usługa: <span th:text="${reservation.getService().ServiceName}"></span></p>
+    <p>Koszt usługi: <span th:text="${reservation.getPrice()}"></span> zł</p>
+    </p>
+</div>
+</body>
+</html>

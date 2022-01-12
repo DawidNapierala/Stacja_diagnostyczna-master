@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+</head>
+<body>
+<form method="get">
+    <div>
+        <label for="date">Data: </label>
+        <input type="date" id="date" name="date">
+    </div>
+    <input type="submit" value="Znajdź usługi">
+</form>
+
+<div th:if="${date}" class="reservation-details">
+    <p>Wybrana data: <span th:text="${date}"></span></p>
+
+    <div th:each="service: ${services}">
+        <a th:href="@{/reserve-service/{id}(date=${date}, id=${service.id})}">
+            Usługa: <span th:text="${service.ServiceName}"></span>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
