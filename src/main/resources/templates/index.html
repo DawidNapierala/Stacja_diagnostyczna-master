@@ -16,9 +16,9 @@
 <div th:if="${date}" class="reservation-details">
     <p>Wybrana data: <span th:text="${date}"></span></p>
 
-    <div th:each="service: ${services}">
-        <a th:href="@{/reserve-service/{id}(date=${date}, id=${service.id})}">
-            Usługa: <span th:text="${service.ServiceName}"></span>
+    <div th:each="Serwis: ${services}">
+        <a th:href="@{/reserve-service/{id}(date=${date}, id=${Serwis.id})}">
+            Usługa: <span th:text="${Serwis.ServiceName}"></span>
         </a>
     </div>
 

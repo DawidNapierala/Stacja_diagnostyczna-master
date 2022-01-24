@@ -24,6 +24,10 @@ public class ReservationService {
     @Autowired
     ServiceRepository serviceRepository;
 
+    public List<Serwis> listAllServices() {
+        return serviceRepository.findAll();
+    }
+
     public List<Serwis> getAvailableServices(LocalDate date) {
         List<Long> ExcludedIds = serviceRepository.getAllServicesBooked(date);
 

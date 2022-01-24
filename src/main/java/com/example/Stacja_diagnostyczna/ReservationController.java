@@ -32,9 +32,9 @@ public class ReservationController {
 
             model.addAttribute("date", Date.toString());
 
-            List<Serwis> services = reservationService.getAvailableServices(Date);
+            //List<Serwis> services = reservationService.getAvailableServices(Date);
 
-            model.addAttribute("services", services);
+            model.addAttribute("services", reservationService.listAllServices());
         }
         return "index";
     }
