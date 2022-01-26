@@ -16,10 +16,10 @@
     </tr>
     <tr th:each = "Reservation: ${reservations}">
         <td th:text="${Reservation.id}"/>
-        <td th:text="${Reservation.date}"/>
         <td th:text="${Reservation.price}"/>
-        <td th:text="${Reservation.service}"/>
         <td th:text="${Reservation.client}"/>
+        <td th:text="${Reservation.date}"/>        
+        <td th:text="${Reservation.service}"/>
     </tr>
 </table>
 </body>

@@ -29,4 +29,45 @@ public class Reservation {
 
     @NotNull
     private String client;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public float getPrice() {
+		return Price;
+	}
+
+	public void setPrice(float price) {
+		Price = price;
+	}
+
+	public Serwis getService() {
+		return service;
+	}
+
+	public void setService(Serwis service) {
+		this.service = service;
+	}
+
+	public String getClient() {
+		return client;
+	}
+
+	public void setClient(String client) {
+		this.client = client;
+	}
+    
 }
