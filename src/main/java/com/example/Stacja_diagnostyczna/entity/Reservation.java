@@ -1,5 +1,6 @@
 package com.example.Stacja_diagnostyczna.entity;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,6 @@ public class Reservation {
     @ManyToOne
     private Serwis service;
 
-    @ManyToOne
-    private Client client;
+    @NotNull
+    private String client;
 }

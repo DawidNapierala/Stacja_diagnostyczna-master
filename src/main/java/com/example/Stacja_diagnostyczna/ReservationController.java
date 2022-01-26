@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,7 +23,7 @@ public class ReservationController {
     @GetMapping("/")
     public String home(
             @RequestParam(value = "date", required = false) String DateString, Model model
-    ){
+    ) {
         if (DateString != null) {
             LocalDate Date = LocalDate.parse(DateString);
 
@@ -38,6 +35,14 @@ public class ReservationController {
         }
         return "index";
     }
+
+    @GetMapping("/reservations")
+    public String home2(Model model) {
+
+        model.addAttribute("reservations", reservationService.listAllReservations());
+
+        return"reservations";
+}
 
     @GetMapping("/reserve-service/{id}")
     public String reserveService(
@@ -61,16 +66,14 @@ public class ReservationController {
         return "redirect:/";
     }
 
-    @PostMapping("/reservation-confirm")
+    @PostMapping("/reservation-confirm1")
     public String reservationConfirm(
             @RequestParam("client_name") String ClientName,
             @RequestParam("date") String DateString,
             @RequestParam("serviceid") Long ServiceId
     ){
         LocalDate Date = LocalDate.parse(DateString);
-
         Reservation reservation = reservationService.createReservation(ClientName, Date, ServiceId);
-
         return "redirect:/reservation-confirm"+reservation.getId();
     }
 

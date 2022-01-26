@@ -11,7 +11,7 @@
 <p>Cena usługi: <span th:text="${reservationprice}"></span> zł</p>
 
 
-<form method="post" action="/book-confirm">
+<form method="post" action="/reservation-confirm1">
     <input type="text" name="client_name">
     <input type="hidden" name="date" th:value="${date}">
     <input type="hidden" name="serviceid" th:value="${serviceid}">

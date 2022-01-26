@@ -27,6 +27,9 @@ public class ReservationService {
     public List<Serwis> listAllServices() {
         return serviceRepository.findAll();
     }
+    public List<Reservation> listAllReservations() {
+        return reservationRepository.findAll();
+    }
 
     public List<Serwis> getAvailableServices(LocalDate date) {
         List<Long> ExcludedIds = serviceRepository.getAllServicesBooked(date);
@@ -52,7 +55,7 @@ public class ReservationService {
 
         Optional<Serwis> service = serviceRepository.findById(ServiceId);
 
-        r.setClient(c);
+        r.setClient(ClientName);
         r.setDate(date);
         r.setPrice(CalculateServicePrices(service.get().ServicePrice));
         r.setService(service.get());

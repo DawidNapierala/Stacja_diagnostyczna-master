@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Rezerwacje</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Koszt</th>
+        <th>Klient</th>
+        <th>Data</th>
+        <th>Numer Stacji Diagnostycznej</th>
+    </tr>
+    <tr th:each = "Reservation: ${reservations}">
+        <td th:text="${Reservation.id}"/>
+        <td th:text="${Reservation.date}"/>
+        <td th:text="${Reservation.price}"/>
+        <td th:text="${Reservation.service}"/>
+        <td th:text="${Reservation.client}"/>
+    </tr>
+</table>
+</body>
+</html>
